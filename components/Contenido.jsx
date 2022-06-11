@@ -1,24 +1,15 @@
-import Image from "next/image";
+import Skills from "./Skills";
 
 /* eslint-disable @next/next/no-img-element */
-const Contenido = () => {
+const Contenido = ({ habilidades }) => {
   return (
     <main className='principal'>
       <section className='principal_sec1'>
-        {/* historias */}
-        <div className='flex space-x-2 pt-3 px-3 md:bg-slate-200 shadow-md shadow-slate-400 md:rounded-md overflow-x-scroll rounded-none bg-slate-100'>
-          <div>
-            <div className='rounded-full border-2 border-red-300 cursor-pointer overflow-hidden h-14 w-14'>
-              <img
-                className='w-full'
-                src='https://avatars.githubusercontent.com/u/52583430'
-                alt=''
-              />
-            </div>
-            <p className='font-light text-sm truncate w-14 mt-1 text-center'>
-              html
-            </p>
-          </div>
+        <p className='hidden md:block mx-3 lg:mx-0 border-b-2 text-slate-500 mb-3'>
+          Skills
+        </p>
+        <div className='historias'>
+          <Skills habilidades={habilidades} />
         </div>
         {/* posts */}
       </section>

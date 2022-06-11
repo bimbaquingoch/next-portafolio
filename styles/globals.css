@@ -9,7 +9,7 @@
   }
   /* scrollbar */
   ::-webkit-scrollbar {
-    @apply w-1.5 h-1.5;
+    @apply w-0.5  h-0;
   }
   ::-webkit-scrollbar-thumb {
     @apply bg-red-400 rounded-lg shadow-2xl;
@@ -36,12 +36,15 @@
 
   /* contenido */
   .principal {
-    @apply grid grid-cols-1 md:grid-cols-2 md:max-w-3xl xl:grid-cols-3 xl:max-w-5xl mx-auto mt-10;
+    @apply grid grid-cols-1 md:grid-cols-2 md:max-w-3xl xl:grid-cols-3 xl:max-w-5xl mx-auto lg:mt-5;
   }
   .principal_sec1 {
     @apply col-span-2 xl:max-w-2xl xl:relative h-screen;
   }
   .princial_sec2 {
     @apply hidden xl:inline-grid md:col-span-1;
+  }
+  .historias {
+    @apply flex gap-3 mx-3 lg:mx-0 p-3 md:bg-gradient-to-r from-slate-200  md:rounded-md overflow-x-scroll rounded-none;
   }
 }
