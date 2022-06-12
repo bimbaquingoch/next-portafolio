@@ -1,12 +1,15 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { AiFillGithub, AiFillTwitterCircle, AiFillHome } from "react-icons/ai";
 import { BiSun, BiMoon } from "react-icons/bi";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
-
+  const [mounted, setmounted] = useState(false);
+  useEffect(() => setmounted(true), []);
+  if (!mounted) return null;
   return (
     <header className='header'>
       <div className='header_content'>
@@ -14,7 +17,7 @@ const Header = () => {
         <nav className='navegacion'>
           <Link href={"/"}>
             <a href=''>
-              <AiFillHome className='text-indigo-500 p-1' size={40} />
+              <AiFillHome className='text-sky-500 p-1' size={40} />
             </a>
           </Link>
 

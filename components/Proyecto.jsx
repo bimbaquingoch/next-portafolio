@@ -4,7 +4,7 @@ import PostButtons from "./PostButtons";
 
 const Proyecto = ({ proyecto }) => {
   return (
-    <div className='proyecto  dark:backdrop-blur-sm'>
+    <div className='proyecto'>
       <div className='flex p-2 items-center justify-between'>
         <ImgProfile />
         <p>

@@ -54,7 +54,7 @@
     @apply hidden xl:inline-grid md:col-span-1;
   }
   .historias {
-    @apply flex gap-3 md:mx-3 lg:mx-0 p-3 md:bg-gradient-to-r from-slate-200 dark:from-slate-600  md:rounded-md overflow-x-scroll rounded-none;
+    @apply flex gap-3 md:mx-3 lg:mx-0 p-3 md:bg-gradient-to-r from-slate-200 dark:from-slate-600  md:rounded-md overflow-x-scroll rounded-none dark:backdrop-blur-lg;
   }
   .historias::-webkit-scrollbar {
     @apply sm:h-0;
@@ -72,9 +72,48 @@
     @apply bg-slate-800 text-slate-100 dark:bg-slate-200 dark:text-slate-700;
   }
   .proyecto {
-    @apply bg-slate-50 dark:backdrop-blur-md md:mx-3 lg:mx-0 dark:bg-slate-600 my-3 md:my-5 md:rounded-md dark:shadow-lg;
+    @apply backdrop-blur-lg bg-opacity-80 dark:bg-slate-600 dark:bg-opacity-80 bg-slate-100 md:mx-3 lg:mx-0 my-3 md:my-5 md:rounded-md dark:shadow-lg;
   }
   .proyecto p {
     @apply text-sm;
+  }
+}
+
+.bubbles {
+  display: flex;
+  left: 0;
+  width: 100%;
+  justify-content: space-evenly;
+  position: absolute;
+  max-width: 768px;
+}
+
+.bubbles > span {
+  animation: movimiento 5s linear infinite;
+  border-radius: 50%;
+  background: #4fc3dc;
+  box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  height: 30px;
+  position: relative;
+  width: 30px;
+  z-index: 20;
+}
+@media screen and (min-width: 1024px) {
+  .bubbles {
+    left: 20%;
+  }
+}
+.bubbles > span:nth-child(even) {
+  animation: movimiento 5s reverse infinite;
+  background: #ff2d75;
+  box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+
+@keyframes movimiento {
+  0% {
+    transform: translateY(87vh);
+  }
+  100% {
+    transform: translateY(-90vh);
   }
 }
