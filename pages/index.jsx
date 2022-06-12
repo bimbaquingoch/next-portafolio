@@ -1,10 +1,19 @@
 import Head from "next/head";
+import { useEffect } from "react";
 import Contenido from "../components/Contenido";
 import Header from "../components/Header";
+import usePortafolio from "../hooks/usePortafolio";
 
-const Home = ({ habilidades }) => {
+const Home = ({ habilidades, proyectos }) => {
+  const { sethabilidades, setproyectos } = usePortafolio();
+
+  useEffect(() => {
+    sethabilidades(habilidades);
+    setproyectos(proyectos);
+  }, [sethabilidades, habilidades, setproyectos, proyectos]);
+
   return (
-    <div className='h-screen w-full bg-slate-300 overflow-x-hidden'>
+    <div className='h-screen w-full bg-slate-300 dark:bg-slate-700 overflow-x-hidden'>
       <Head>
         <title>Bimb</title>
         <meta name='description' content='Portafolio creado con Nextjs' />
@@ -12,17 +21,23 @@ const Home = ({ habilidades }) => {
       </Head>
       <Header />
 
-      <Contenido habilidades={habilidades} />
+      <Contenido />
     </div>
   );
 };
 
 export const getStaticProps = async () => {
-  const url = `${process.env.API_URL}/my-skills`;
-  const respuesta = await fetch(url);
-  const habilidades = await respuesta.json();
-
-  return { props: { habilidades } };
+  const urlSkills = `${process.env.API_URL}/my-skills`;
+  const urlProyects = `${process.env.API_URL}/projects`;
+  const [respSkill, respProject] = await Promise.all([
+    fetch(urlSkills),
+    fetch(urlProyects),
+  ]);
+  const [habilidades, proyectos] = await Promise.all([
+    respSkill.json(),
+    respProject.json(),
+  ]);
+  return { props: { habilidades, proyectos } };
 };
 
 export default Home;

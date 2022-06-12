@@ -9,10 +9,10 @@
   }
   /* scrollbar */
   ::-webkit-scrollbar {
-    @apply w-0.5  h-0;
+    @apply lg:w-1 h-0;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-red-400 rounded-lg shadow-2xl;
+    @apply bg-gradient-to-b from-red-400 via-teal-500 to-sky-600 rounded-lg;
   }
   /* fin scrollbar */
 
@@ -30,7 +30,7 @@
     @apply flex items-center gap-10 sm:gap-5;
   }
   .navegacion a {
-    @apply shadow-lg shadow-slate-400 rounded-full transition-all ease-in-out duration-300;
+    @apply shadow-md shadow-slate-400 rounded-full transition-all ease-in-out duration-300;
   }
   /* fin header */
 
@@ -45,6 +45,18 @@
     @apply hidden xl:inline-grid md:col-span-1;
   }
   .historias {
-    @apply flex gap-3 mx-3 lg:mx-0 p-3 md:bg-gradient-to-r from-slate-200  md:rounded-md overflow-x-scroll rounded-none;
+    @apply flex gap-3 md:mx-3 lg:mx-0 p-3 md:bg-gradient-to-r from-slate-200 dark:from-slate-600  md:rounded-md overflow-x-scroll rounded-none;
+  }
+  .historias:hover::-webkit-scrollbar {
+    @apply lg:h-2;
+  }
+  .historias:hover::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-r from-red-400 via-teal-500 to-sky-600 rounded-lg;
+  }
+  .btnPost {
+    @apply p-1.5 rounded-full bg-slate-200 dark:bg-slate-700 transition-all ease-in-out duration-300;
+  }
+  .btnPost:hover {
+    @apply bg-slate-800 text-slate-100 dark:bg-slate-200 dark:text-slate-700;
   }
 }

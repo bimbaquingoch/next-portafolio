@@ -1,15 +1,17 @@
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { AiFillGithub, AiFillTwitterCircle } from "react-icons/ai";
 import { BiSun, BiMoon } from "react-icons/bi";
 
 const Header = () => {
-  const [dark, setdark] = useState(false);
+  const { theme, setTheme } = useTheme();
+
   return (
     <header className='header'>
       <div className='header_content'>
-        <h1>Portfolio</h1>
+        {/* <h1>Portfolio</h1> */}
+        <h1 className=''>Portfolio</h1>
         <nav className='navegacion'>
           <Link href={""}>
             <a className='hover:text-slate-50 hover:bg-black ' href=''>
@@ -23,22 +25,14 @@ const Header = () => {
               <AiFillTwitterCircle size={40} />
             </a>
           </Link>
-          {dark ? (
-            <Link href={""}>
-              <a className='' onClick={() => setdark(!dark)} href=''>
-                <BiSun size={40} />
-              </a>
-            </Link>
-          ) : (
-            <Link href={""}>
-              <a
-                className='hover:bg-slate-800 p-0 hover:text-slate-100'
-                onClick={() => setdark(!dark)}
-                href=''>
-                <BiMoon size={40} />
-              </a>
-            </Link>
-          )}
+          {/* <Link href={""}> */}
+          <button
+            className='shadow-md rounded-full shadow-slate-400 backdrop-blur-sm dark:text-slate-200'
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            href=''>
+            {theme === "light" ? <BiMoon size={40} /> : <BiSun size={40} />}
+          </button>
+          {/* </Link> */}
           <Link href={""}>
             <a className='h-10 overflow-hidden' href=''>
               <Image
