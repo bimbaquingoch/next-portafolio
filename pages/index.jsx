@@ -1,7 +1,6 @@
-import Head from "next/head";
 import { useEffect } from "react";
 import Contenido from "../components/Contenido";
-import Header from "../components/Header";
+import Layout from "../components/Layout";
 import usePortafolio from "../hooks/usePortafolio";
 
 const Home = ({ habilidades, proyectos }) => {
@@ -13,16 +12,9 @@ const Home = ({ habilidades, proyectos }) => {
   }, [sethabilidades, habilidades, setproyectos, proyectos]);
 
   return (
-    <div className='h-screen w-full bg-slate-300 dark:bg-slate-700 overflow-x-hidden'>
-      <Head>
-        <title>Bimb</title>
-        <meta name='description' content='Portafolio creado con Nextjs' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <Header />
-
+    <Layout page={"home"}>
       <Contenido />
-    </div>
+    </Layout>
   );
 };
 

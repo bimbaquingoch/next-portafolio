@@ -4,7 +4,7 @@ import { HiLink } from "react-icons/hi";
 
 const PostButtons = ({ repo_url, demo_url }) => {
   return (
-    <div className='flex gap-2 p-2 mt-1'>
+    <div className='flex p-2 px-3 mt-1 w-full justify-between'>
       <Link href={""}>
         <a
           className='btnPost'
