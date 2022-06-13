@@ -8,7 +8,7 @@ const PerfilContent = () => {
       </h1>
       <ul className='escribiendo text-sky-600'>
         <li>
-          <span className='capitalize relative bg-slate-300 dark:bg-slate-700'>
+          <span className='capitalize relative'>
             computer science engineer...
           </span>
         </li>

@@ -8,7 +8,7 @@ const Proyectos = () => {
   return (
     <div className='pb-4'>
       {proyectos.map((proyecto) => (
-        <Fade key={proyecto._id} direction='left' triggerOnce>
+        <Fade key={proyecto._id}>
           <Proyecto proyecto={proyecto} />
         </Fade>
       ))}

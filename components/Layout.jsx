@@ -12,8 +12,11 @@ const Layout = ({ children, page }) => {
         <meta name='title' content={`Bimb - ${page}`} />
         <meta
           name='description'
-          content='Nuevo portafolio creado con NEXTJS y strapi'
+          content="Nice to meet you I'm Bryan Imbaquingo and this is my website created with  NEXTJS and strapi"
         />
+
+        <meta name='robots' content='index,follow' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property='og:type' content='website' />

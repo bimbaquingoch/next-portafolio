@@ -14,7 +14,7 @@ const HeaderProfile = () => {
           alt='bryan imbaquingo'
         />
       </div>
-      <section className='col-start-2 col-end-4 flex flex-col gap-1'>
+      <section className='col-start-2 col-end-4 flex flex-col gap-1 items-center md:items-start justify-center'>
         <h1 className='text-xl'>bryandresimba</h1>
         <section className='col-start-1 col-end-4 my-2 hidden md:block w-full'>
           <PerfilContent />

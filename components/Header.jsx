@@ -13,7 +13,9 @@ const Header = () => {
   return (
     <header className='header'>
       <div className='header_content'>
-        <h1 className=''>Portfolio</h1>
+        <Link href={"/"}>
+          <h1 className='cursor-pointer'>Bryan Imbaquingo</h1>
+        </Link>
         <nav className='navegacion'>
           <Link href={"/"}>
             <a href=''>
