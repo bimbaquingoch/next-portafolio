@@ -77,6 +77,39 @@
   .proyecto p {
     @apply text-sm;
   }
+  .escribiendo {
+    @apply h-8 overflow-hidden leading-5;
+  }
+}
+
+.escribiendo li {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  top: 0;
+  animation: slide 20s steps(4) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -120px;
+  }
+}
+
+.escribiendo li span::after {
+  position: absolute;
+  background-color: #cbd5e1;
+  content: "";
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid #38bdf8;
+  animation: escritura 5s steps(30) infinite;
+}
+
+@keyframes escritura {
+  100% {
+    left: 100%;
+  }
 }
 
 .bubbles {

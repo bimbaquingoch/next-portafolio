@@ -1,7 +1,37 @@
+import Image from "next/image";
 import Layout from "../components/Layout";
+import PerfilContent from "../components/PerfilContent";
+import Skills from "../components/Skills";
 
 const perfil = () => {
-  return <Layout page={"perfil"}>perfil</Layout>;
+  return (
+    <Layout page={"perfil"}>
+      <div className='mx-auto md:max-w-3xl lg:max-w-5xl lg:mt-5'>
+        <header className='grid grid-cols-3 p-3'>
+          <div className='w-20 h-20 md:w-36 md:h-36 mx-auto'>
+            <Image
+              layout='responsive'
+              width={100}
+              height={100}
+              className='rounded-full'
+              src='https://avatars.githubusercontent.com/u/52583430'
+              alt='bryan imbaquingo'
+            />
+          </div>
+          <section className='col-start-2 col-end-4 flex flex-col gap-1'>
+            <h1 className=''>bryandresimba</h1>
+            <section className='col-start-1 col-end-4 my-2 hidden md:block w-full'>
+              <PerfilContent />
+            </section>
+          </section>
+          <section className='col-start-1 col-end-4 my-2 md:hidden w-full flex flex-col gap-1'>
+            <PerfilContent />
+          </section>
+        </header>
+        <Skills />
+      </div>
+    </Layout>
+  );
 };
 
 export default perfil;
