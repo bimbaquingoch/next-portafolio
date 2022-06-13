@@ -14,8 +14,6 @@ const Perfil = ({ habilidades, proyectos }) => {
     setproyectos(proyectos);
   }, [sethabilidades, habilidades, setproyectos, proyectos]);
 
-  console.log(proyectos);
-
   return (
     <Layout page={"perfil"}>
       <div className='mx-auto md:max-w-3xl lg:max-w-5xl lg:mt-5 z-40 relative'>

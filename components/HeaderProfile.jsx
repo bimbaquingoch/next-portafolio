@@ -3,7 +3,7 @@ import PerfilContent from "./PerfilContent";
 
 const HeaderProfile = () => {
   return (
-    <header className='grid grid-cols-3 p-3'>
+    <header className='grid grid-cols-3 p-3 backdrop-blur-lg rounded-md dark:shadow-md mb-2'>
       <div className='w-20 h-20 md:w-36 md:h-36 mx-auto'>
         <Image
           layout='responsive'
