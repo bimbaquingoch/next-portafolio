@@ -1,37 +1,45 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+import { useEffect } from "react";
+import GridImg from "../components/GridImg";
+import HeaderProfile from "../components/HeaderProfile";
 import Layout from "../components/Layout";
-import PerfilContent from "../components/PerfilContent";
 import Skills from "../components/Skills";
+import usePortafolio from "../hooks/usePortafolio";
 
-const perfil = () => {
+const Perfil = ({ habilidades, proyectos }) => {
+  const { sethabilidades, setproyectos } = usePortafolio();
+
+  useEffect(() => {
+    sethabilidades(habilidades);
+    setproyectos(proyectos);
+  }, [sethabilidades, habilidades, setproyectos, proyectos]);
+
+  console.log(proyectos);
+
   return (
     <Layout page={"perfil"}>
-      <div className='mx-auto md:max-w-3xl lg:max-w-5xl lg:mt-5'>
-        <header className='grid grid-cols-3 p-3'>
-          <div className='w-20 h-20 md:w-36 md:h-36 mx-auto'>
-            <Image
-              layout='responsive'
-              width={100}
-              height={100}
-              className='rounded-full'
-              src='https://avatars.githubusercontent.com/u/52583430'
-              alt='bryan imbaquingo'
-            />
-          </div>
-          <section className='col-start-2 col-end-4 flex flex-col gap-1'>
-            <h1 className=''>bryandresimba</h1>
-            <section className='col-start-1 col-end-4 my-2 hidden md:block w-full'>
-              <PerfilContent />
-            </section>
-          </section>
-          <section className='col-start-1 col-end-4 my-2 md:hidden w-full flex flex-col gap-1'>
-            <PerfilContent />
-          </section>
-        </header>
+      <div className='mx-auto md:max-w-3xl lg:max-w-5xl lg:mt-5 z-40 relative'>
+        <HeaderProfile />
         <Skills />
+        <div className='w-full border-b-2 my-4'></div>
+        <GridImg />
       </div>
     </Layout>
   );
 };
 
-export default perfil;
+export const getStaticProps = async () => {
+  const urlSkills = `${process.env.API_URL}/my-skills`;
+  const urlProyects = `${process.env.API_URL}/projects`;
+  const [respSkill, respProject] = await Promise.all([
+    fetch(urlSkills),
+    fetch(urlProyects),
+  ]);
+  const [habilidades, proyectos] = await Promise.all([
+    respSkill.json(),
+    respProject.json(),
+  ]);
+  return { props: { habilidades, proyectos } };
+};
+
+export default Perfil;

@@ -6,6 +6,9 @@ const Burbujas = () => {
       <span></span>
       <span></span>
       <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   );
 };

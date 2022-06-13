@@ -3,10 +3,12 @@ const PerfilContent = () => {
   return (
     <>
       <p className='text-slate-500'>hi! I'm</p>
-      <h1 className='capitalize text-slate-700'>bryan imbaquingo</h1>
+      <h1 className='capitalize text-slate-700 dark:text-slate-300 text-2xl'>
+        bryan imbaquingo
+      </h1>
       <ul className='escribiendo text-sky-600'>
         <li>
-          <span className='capitalize relative'>
+          <span className='capitalize relative bg-slate-300 dark:bg-slate-700'>
             computer science engineer...
           </span>
         </li>
