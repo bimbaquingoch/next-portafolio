@@ -1,10 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react";
-import GridImg from "../components/GridImg";
-import HeaderProfile from "../components/HeaderProfile";
-import Layout from "../components/Layout";
-import Skills from "../components/Skills";
-import usePortafolio from "../hooks/usePortafolio";
+import GridImg from "components/GridImg";
+import HeaderProfile from "components/HeaderProfile";
+import Layout from "components/Layout";
+import Skills from "components/Skills";
+import usePortafolio from "hooks/usePortafolio";
 
 const Perfil = ({ habilidades, proyectos }) => {
   const { sethabilidades, setproyectos } = usePortafolio();
@@ -26,7 +25,7 @@ const Perfil = ({ habilidades, proyectos }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const urlSkills = `${process.env.API_URL}/my-skills`;
   const urlProyects = `${process.env.API_URL}/projects`;
   const [respSkill, respProject] = await Promise.all([
@@ -39,5 +38,19 @@ export const getStaticProps = async () => {
   ]);
   return { props: { habilidades, proyectos } };
 };
+
+// export const getStaticProps = async () => {
+//   const urlSkills = `${process.env.API_URL}/my-skills`;
+//   const urlProyects = `${process.env.API_URL}/projects`;
+//   const [respSkill, respProject] = await Promise.all([
+//     fetch(urlSkills),
+//     fetch(urlProyects),
+//   ]);
+//   const [habilidades, proyectos] = await Promise.all([
+//     respSkill.json(),
+//     respProject.json(),
+//   ]);
+//   return { props: { habilidades, proyectos } };
+// };
 
 export default Perfil;

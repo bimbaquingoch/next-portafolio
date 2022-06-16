@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import usePortafolio from "../hooks/usePortafolio";
+import usePortafolio from "hooks/usePortafolio";
 
 const Skills = () => {
   const { habilidades } = usePortafolio();

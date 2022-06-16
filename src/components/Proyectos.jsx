@@ -1,6 +1,6 @@
-import usePortafolio from "../hooks/usePortafolio";
 import Proyecto from "./Proyecto";
 import { Fade } from "react-awesome-reveal";
+import usePortafolio from "hooks/usePortafolio";
 
 const Proyectos = () => {
   const { proyectos } = usePortafolio();

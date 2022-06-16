@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+
 import Proyectos from "./Proyectos";
 import Skills from "./Skills";
 

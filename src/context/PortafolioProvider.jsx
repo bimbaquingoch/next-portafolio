@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+
 const PortafolioContext = createContext();
 
 const PortafolioProvider = ({ children }) => {
@@ -7,7 +8,12 @@ const PortafolioProvider = ({ children }) => {
 
   return (
     <PortafolioContext.Provider
-      value={{ habilidades, sethabilidades, proyectos, setproyectos }}>
+      value={{
+        habilidades,
+        sethabilidades,
+        proyectos,
+        setproyectos,
+      }}>
       {children}
     </PortafolioContext.Provider>
   );

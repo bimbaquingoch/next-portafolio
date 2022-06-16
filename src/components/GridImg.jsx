@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 import { FiGithub } from "react-icons/fi";
 import { HiLink } from "react-icons/hi";
-import usePortafolio from "../hooks/usePortafolio";
+import usePortafolio from "hooks/usePortafolio";
 
 const GridImg = () => {
   const { proyectos } = usePortafolio();
