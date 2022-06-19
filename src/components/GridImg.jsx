@@ -8,7 +8,7 @@ import usePortafolio from "hooks/usePortafolio";
 const GridImg = () => {
   const { proyectos } = usePortafolio();
   return (
-    <div className='grid grid-cols-3 pb-7'>
+    <div className='grid grid-cols-2 md:grid-cols-3 pb-7'>
       {proyectos.map((proyecto) => (
         <Fade key={proyecto._id}>
           <div className='w-full h-28 md:h-60 lg:h-72 relative'>

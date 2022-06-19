@@ -27,7 +27,7 @@ const Perfil = ({ habilidades, proyectos }) => {
 
 export const getServerSideProps = async () => {
   const urlSkills = `${process.env.API_URL}/my-skills`;
-  const urlProyects = `${process.env.API_URL}/projects`;
+  const urlProyects = `${process.env.API_URL}/projects?_sort=fecha_inicio:DESC`;
   const [respSkill, respProject] = await Promise.all([
     fetch(urlSkills),
     fetch(urlProyects),
