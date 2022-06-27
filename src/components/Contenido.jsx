@@ -12,8 +12,8 @@ const Contenido = () => {
       </section>
       <section className='principal_sec2'>
         {/* fixed */}
-        <div className='h-max w-max fixed'>
-          <h1 className='bg-teal-300'>mini</h1>
+        <div className='fixed'>
+          <p className='heading w-full'>mini</p>
         </div>
       </section>
     </main>

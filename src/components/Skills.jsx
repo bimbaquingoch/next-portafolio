@@ -7,7 +7,7 @@ const Skills = () => {
 
   return (
     <>
-      <p className='md:mx-3 lg:mx-0 dark:text-slate-300 border-b-2 text-slate-500 md:mb-3 mt-3 md:mt-0'>
+      <p className='heading'>
         Skills
       </p>
       <div className='historias'>
