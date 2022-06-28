@@ -5,6 +5,7 @@ const PortafolioContext = createContext();
 const PortafolioProvider = ({ children }) => {
   const [habilidades, sethabilidades] = useState([]);
   const [proyectos, setproyectos] = useState([]);
+  const [education, seteducation] = useState([]);
 
   return (
     <PortafolioContext.Provider
@@ -13,6 +14,8 @@ const PortafolioProvider = ({ children }) => {
         sethabilidades,
         proyectos,
         setproyectos,
+        education,
+        seteducation,
       }}>
       {children}
     </PortafolioContext.Provider>
